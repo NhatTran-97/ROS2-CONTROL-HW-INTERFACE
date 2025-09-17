@@ -1,0 +1,9 @@
+<library path="robot_hardware_interface">
+  <class name="mobile_base_hardware/MobileBaseHardwareInterface"
+         type="mobile_base_hardware::MobileBaseHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Hardware interface for a mobile base with 2 Dynamixel XL330 motors
+    </description>
+  </class>
+</library>
