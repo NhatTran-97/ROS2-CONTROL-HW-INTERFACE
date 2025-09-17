@@ -38,6 +38,12 @@ def generate_launch_description():
         arguments=["diff_drive_controller"],
     )
 
+    arm_joints_controller_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["arm_joints_controller"],
+    )
+
     rviz_node = Node(
         package="rviz2",
         executable="rviz2",
@@ -50,5 +56,6 @@ def generate_launch_description():
         control_node,
         joint_state_broadcaster_spawner,
         diff_drive_controller_spawner,
+        arm_joints_controller_spawner,
         rviz_node,
     ])

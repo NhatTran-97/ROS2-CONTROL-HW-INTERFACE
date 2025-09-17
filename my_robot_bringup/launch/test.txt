@@ -1,1 +1,2 @@
 ros2 launch my_robot_bringup my_robot.launch.xml 
+ros2 launch my_robot_description display.launch.py
