@@ -1,2 +1,14 @@
 ros2 launch my_robot_bringup my_robot.launch.xml 
 ros2 launch my_robot_description display.launch.py
+ros2 topic pub -1 /arm_joints_controller/commands std_msgs/msg/Float64MultiArray "{data: [0.4, 0.3]"}
+ros2 control list_controllers
+ros2 control list_hardware_interfaces
+ros2 control list_hardware_components 
+
+
+
+
+
+sudo apt install ros-humble-ros-gz
+sudo apt install ros-humble-gz-ros2-control*
+

@@ -20,7 +20,7 @@ MobileBaseHardwareInterface::on_init(const hardware_interface::HardwareInfo &inf
   }
 
   // Lưu info URDF
-  info_ = info_;
+  info_ = info;
 
   // Cấu hình ID động cơ và port
   left_motor_id_ = std::stoi(info_.hardware_parameters["left_motor_id"]);

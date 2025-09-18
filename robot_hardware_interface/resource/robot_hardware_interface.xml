@@ -6,4 +6,12 @@
       Hardware interface for a mobile base with 2 Dynamixel XL330 motors
     </description>
   </class>
+
+    <class name="arm_hardware/ArmHardwareInterface"
+         type="arm_hardware::ArmHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Hardware interface for an arm with 2 Dynamixel XL330 motors
+    </description>
+  </class>
 </library>
