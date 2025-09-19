@@ -10,6 +10,9 @@ controller_manager:
 
     arm_joints_controller: # any name
       type: forward_command_controller/ForwardCommandController
+    
+    my_arm_controller:
+      type: robot_controller/RobotController
 
  
 
@@ -39,3 +42,10 @@ arm_joints_controller:
   ros__parameters:
     joints: ["arm_joint1", "arm_joint2"]
     interface_name: "position"
+
+
+my_arm_controller:
+  ros__parameters:
+    joints: ["arm_joint1", "arm_joint2"]
+    interface_name: "position"
+    coefficient: 0.05

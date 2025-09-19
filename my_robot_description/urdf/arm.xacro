@@ -17,9 +17,33 @@
             <origin xyz="0 0 ${arm_base_height / 2.0}" rpy="0 0 0" />
             <material name="orange" />
         </visual>
+        <collision>
+            <geometry>
+                <box size="${arm_base_length} ${arm_base_width} ${arm_base_height}" />
+            </geometry>
+            <origin xyz="0 0 ${arm_base_height / 2.0}" rpy="0 0 0" />
+        </collision>
+        <xacro:box_inertia m="0.5" x="${arm_base_length}" y="${arm_base_width}" z="${arm_base_height}"
+                           o_xyz="0 0 ${arm_base_height / 2.0}" o_rpy="0 0 0" />
     </link>
 
- 
+    <link name="forearm_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${forearm_radius}" length="${forearm_length}" />
+            </geometry>
+            <origin xyz="0 0 ${forearm_length / 2.0}" rpy="0 0 0" />
+            <material name="yellow" />
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="${forearm_radius}" length="${forearm_length}" />
+            </geometry>
+            <origin xyz="0 0 ${forearm_length / 2.0}" rpy="0 0 0" />
+        </collision>
+        <xacro:cylinder_inertia m="0.3" r="${forearm_radius}" l="${forearm_length}"
+                                o_xyz="0 0 ${forearm_length / 2.0}" o_rpy="0 0 0" />
+    </link>
 
     <link name="hand_link">
         <visual>
@@ -29,6 +53,14 @@
             <origin xyz="0 0 ${hand_length / 2.0}" rpy="0 0 0" />
             <material name="orange" />
         </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="${hand_radius}" length="${hand_length}" />
+            </geometry>
+            <origin xyz="0 0 ${hand_length / 2.0}" rpy="0 0 0" />
+        </collision>
+        <xacro:cylinder_inertia m="0.3" r="${hand_radius}" l="${hand_length}"
+                                o_xyz="0 0 ${hand_length / 2.0}" o_rpy="0 0 0" />
     </link>
 
     <joint name="arm_joint1" type="revolute">

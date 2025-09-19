@@ -3,12 +3,12 @@
 
     <ros2_control name="Arm" type="system">
         <hardware>
-            <!-- <plugin>mock_components/GenericSystem</plugin>
-            <param name="calculate_dynamics">true</param> -->
-            <plugin>arm_hardware/ArmHardwareInterface</plugin>
+            <plugin>mock_components/GenericSystem</plugin>
+            <param name="calculate_dynamics">true</param>
+            <!-- <plugin>arm_hardware/ArmHardwareInterface</plugin>
             <param name="joint1_motor_id">10</param>
             <param name="joint2_motor_id">20</param>
-            <param name="dynamixel_port">/dev/ttyUSB0</param>
+            <param name="dynamixel_port">/dev/ttyUSB0</param> -->
         </hardware>
         <joint name="arm_joint1">
             <command_interface name="position"></command_interface>
