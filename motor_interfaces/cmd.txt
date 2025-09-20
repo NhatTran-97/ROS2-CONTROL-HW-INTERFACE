@@ -1,0 +1,4 @@
+ros2 run motor_interfaces simple_serial_transmitter --ros-args -p port:=/dev/ttyUSB0
+ ros2 topic pub /serial_transmitter std_msgs/msg/String  "data: '0'" 
+
+ ros2 run motor_interfaces simple_serial_receiver --ros-args -p port:=/dev/ttyUSB0
