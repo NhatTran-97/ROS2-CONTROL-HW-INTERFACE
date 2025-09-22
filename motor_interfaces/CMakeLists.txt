@@ -11,6 +11,11 @@ find_package(rclpy REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(PkgConfig REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
+find_package(hardware_interface REQUIRED)
+find_package(pluginlib REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
+
 
 pkg_check_modules(SERIAL libserial)
 ament_python_install_package(${PROJECT_NAME})
@@ -27,10 +32,33 @@ ament_target_dependencies(simple_serial_receiver rclcpp std_msgs)
 target_include_directories(simple_serial_receiver PUBLIC "${SERIAL_INCLUDE_DIRS}")
 target_link_libraries(simple_serial_receiver "${SERIAL_LDFLAGS}")
 
+add_executable(simple_lifecycle_node src/simple_lifecycle_node.cpp)
+ament_target_dependencies(simple_lifecycle_node rclcpp std_msgs rclcpp_lifecycle)
+
+
+
+
+add_library(${PROJECT_NAME} SHARED src/motor_interface.cpp)
+target_include_directories(${PROJECT_NAME} PRIVATE
+    include
+    "${SERIAL_INCLUDE_DIRS}")
+target_link_libraries(${PROJECT_NAME} "${SERIAL_LDFLAGS}")
+ament_target_dependencies(${PROJECT_NAME} 
+  hardware_interface 
+  pluginlib 
+  rclcpp 
+  rclcpp_lifecycle)
+
+pluginlib_export_plugin_description_file(hardware_interface motor_interfaces.xml)
+
+
+
+
 
 install(TARGETS
   simple_serial_transmitter 
   simple_serial_receiver
+  simple_lifecycle_node
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin 
@@ -38,11 +66,27 @@ install(TARGETS
   
 )
 
+install(
+  TARGETS ${PROJECT_NAME}
+  DESTINATION lib 
+
+)
+install(
+  DIRECTORY include
+  DESTINATION include
+)
+
+install(
+  DIRECTORY launch urdf config
+  DESTINATION share/${PROJECT_NAME}
+)
+
 
 
 install(PROGRAMS
   ${PROJECT_NAME}/simple_serial_transmitter.py
   ${PROJECT_NAME}/simple_serial_receiver.py
+    ${PROJECT_NAME}/simple_lifecycle_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -53,5 +97,19 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+ament_export_include_directories(
+  include
+)
+ament_export_libraries(
+  ${PROJECT_NAME}
+
+)
+
+ament_export_dependencies(
+  hardware_interface
+  pluginlibrclcpp
+  rclcpp_lifecycle
+)
 
 ament_package()

@@ -1,0 +1,11 @@
+<library path="motor_interfaces">
+    <class name="dc_motor_firmware/MotorInterface"
+           type="dc_motor_firmware::MotorInterface"
+           base_class_type="hardware_interface::SystemInterface">
+           <description>
+            Motor Hardware Interface
+           </description>
+
+    </class>
+
+</library>

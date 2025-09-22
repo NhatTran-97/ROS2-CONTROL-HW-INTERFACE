@@ -2,6 +2,7 @@
 #include "std_msgs/msg/string.hpp"
 #include <libserial/SerialPort.h>
 #include <chrono>
+#include <regex>
 
 using namespace std::chrono_literals;
 
@@ -32,12 +33,24 @@ public:
 
     void timerCallback()
     {
-        auto message = std_msgs::msg::String();
+        
         if(rclcpp::ok() && arduino_.IsDataAvailable())
         {
+            auto message = std_msgs::msg::String();
             arduino_.ReadLine(message.data);
+            // Xử lý loại bỏ kí tự \r\n thừa
+            // message.data.erase(std::remove(message.data.begin(), message.data.end(), '\r'), message.data.end());
+            // message.data.erase(std::remove(message.data.begin(), message.data.end(), '\n'), message.data.end());
+            if(!message.data.empty())
+            {
+                pub_->publish(message);
+
+            }
+            
+
+      
         }
-        pub_->publish(message);
+        
 
     }
 };

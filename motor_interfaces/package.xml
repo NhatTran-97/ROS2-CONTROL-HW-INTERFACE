@@ -14,6 +14,11 @@
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>
   <depend>libserial-dev</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>hardware_interface</depend>
+  <depend>pluginlib</depend>
+
+
 
 
   <exec_depend>python3-serial</exec_depend>

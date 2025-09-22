@@ -1,0 +1,114 @@
+[0.064s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/duynhat/ros2_ws/src/ros2_control', '--log-base', '/dev/null']
+[0.064s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/duynhat/ros2_ws/src/ros2_control', '--log-base', '/dev/null'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7b20770beb30>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7b207703a7d0>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7b207703a7d0>>, mixin_verb=('list',))
+[0.180s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.180s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.180s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.180s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.180s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.180s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/duynhat/ros2_ws/src/ros2_control', '/home/duynhat/ros2_ws/src/ros2_control/--log-base', '/dev/null'
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extensions ['ignore', 'ignore_ament_install']
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extension 'ignore'
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extension 'ignore_ament_install'
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extensions ['colcon_pkg']
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extension 'colcon_pkg'
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extensions ['colcon_meta']
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extension 'colcon_meta'
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extensions ['ros']
+[0.180s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extension 'ros'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extensions ['cmake', 'python']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extension 'cmake'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extension 'python'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extensions ['python_setup_py']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control) by extension 'python_setup_py'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/dxl_test) by extensions ['ignore', 'ignore_ament_install']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/dxl_test) by extension 'ignore'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/dxl_test) by extension 'ignore_ament_install'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/dxl_test) by extensions ['colcon_pkg']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/dxl_test) by extension 'colcon_pkg'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/dxl_test) by extensions ['colcon_meta']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/dxl_test) by extension 'colcon_meta'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/dxl_test) by extensions ['ros']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/dxl_test) by extension 'ros'
+[0.192s] DEBUG:colcon.colcon_core.package_identification:Package '/home/duynhat/ros2_ws/src/ros2_control/dxl_test' with type 'ros.ament_cmake' and name 'dxl_test'
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/log) by extensions ['ignore', 'ignore_ament_install']
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/log) by extension 'ignore'
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/log) ignored
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/motor_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/motor_interfaces) by extension 'ignore'
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/motor_interfaces) by extension 'ignore_ament_install'
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/motor_interfaces) by extensions ['colcon_pkg']
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/motor_interfaces) by extension 'colcon_pkg'
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/motor_interfaces) by extensions ['colcon_meta']
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/motor_interfaces) by extension 'colcon_meta'
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/motor_interfaces) by extensions ['ros']
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/motor_interfaces) by extension 'ros'
+[0.193s] DEBUG:colcon.colcon_core.package_identification:Package '/home/duynhat/ros2_ws/src/ros2_control/motor_interfaces' with type 'ros.ament_cmake' and name 'motor_interfaces'
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_bringup) by extension 'ignore'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_bringup) by extension 'ignore_ament_install'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_bringup) by extensions ['colcon_pkg']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_bringup) by extension 'colcon_pkg'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_bringup) by extensions ['colcon_meta']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_bringup) by extension 'colcon_meta'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_bringup) by extensions ['ros']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_bringup) by extension 'ros'
+[0.194s] DEBUG:colcon.colcon_core.package_identification:Package '/home/duynhat/ros2_ws/src/ros2_control/my_robot_bringup' with type 'ros.ament_cmake' and name 'my_robot_bringup'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_description) by extensions ['ignore', 'ignore_ament_install']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_description) by extension 'ignore'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_description) by extension 'ignore_ament_install'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_description) by extensions ['colcon_pkg']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_description) by extension 'colcon_pkg'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_description) by extensions ['colcon_meta']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_description) by extension 'colcon_meta'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_description) by extensions ['ros']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/my_robot_description) by extension 'ros'
+[0.194s] DEBUG:colcon.colcon_core.package_identification:Package '/home/duynhat/ros2_ws/src/ros2_control/my_robot_description' with type 'ros.ament_cmake' and name 'my_robot_description'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extensions ['ignore', 'ignore_ament_install']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extension 'ignore'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extension 'ignore_ament_install'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extensions ['colcon_pkg']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extension 'colcon_pkg'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extensions ['colcon_meta']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extension 'colcon_meta'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extensions ['ros']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extension 'ros'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extensions ['cmake', 'python']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extension 'cmake'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extension 'python'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extensions ['python_setup_py']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix) by extension 'python_setup_py'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extensions ['ignore', 'ignore_ament_install']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extension 'ignore'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extension 'ignore_ament_install'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extensions ['colcon_pkg']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extension 'colcon_pkg'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extensions ['colcon_meta']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extension 'colcon_meta'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extensions ['ros']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extension 'ros'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extensions ['cmake', 'python']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extension 'cmake'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extension 'python'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extensions ['python_setup_py']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/prefix/image) by extension 'python_setup_py'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_controllers) by extensions ['ignore', 'ignore_ament_install']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_controllers) by extension 'ignore'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_controllers) by extension 'ignore_ament_install'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_controllers) by extensions ['colcon_pkg']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_controllers) by extension 'colcon_pkg'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_controllers) by extensions ['colcon_meta']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_controllers) by extension 'colcon_meta'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_controllers) by extensions ['ros']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_controllers) by extension 'ros'
+[0.196s] DEBUG:colcon.colcon_core.package_identification:Package '/home/duynhat/ros2_ws/src/ros2_control/robot_controllers' with type 'ros.ament_cmake' and name 'robot_controllers'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_hardware_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_hardware_interface) by extension 'ignore'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_hardware_interface) by extension 'ignore_ament_install'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_hardware_interface) by extensions ['colcon_pkg']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_hardware_interface) by extension 'colcon_pkg'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_hardware_interface) by extensions ['colcon_meta']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_hardware_interface) by extension 'colcon_meta'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_hardware_interface) by extensions ['ros']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(/home/duynhat/ros2_ws/src/ros2_control/robot_hardware_interface) by extension 'ros'
+[0.196s] DEBUG:colcon.colcon_core.package_identification:Package '/home/duynhat/ros2_ws/src/ros2_control/robot_hardware_interface' with type 'ros.ament_cmake' and name 'robot_hardware_interface'
+[0.196s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
