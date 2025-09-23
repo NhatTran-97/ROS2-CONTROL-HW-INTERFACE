@@ -90,8 +90,8 @@ CallbackReturn MotorInterface::on_init(const hardware_interface::HardwareInfo &h
 }
 
 
-    std::vector<hardware_interface::StateInterface> MotorInterface::export_state_interfaces()
-    {
+std::vector<hardware_interface::StateInterface> MotorInterface::export_state_interfaces()
+{
         std::vector<hardware_interface::StateInterface> state_interfaces;
         for(size_t i = 0; i < info_.joints.size(); i++)
         {
@@ -104,28 +104,35 @@ CallbackReturn MotorInterface::on_init(const hardware_interface::HardwareInfo &h
         }
         return state_interfaces;
 
-    }
+}
 
-    std::vector<hardware_interface::CommandInterface> MotorInterface::export_command_interfaces()
-    {
+std::vector<hardware_interface::CommandInterface> MotorInterface::export_command_interfaces()
+{
         std::vector<hardware_interface::CommandInterface> command_interfaces;
+    //    command_interfaces.emplace_back("wheel_left_joint", hardware_interface::HW_IF_VELOCITY, &velocity_commands_[0]);
+     //   command_interfaces.emplace_back("wheel_right_joint", hardware_interface::HW_IF_VELOCITY, &velocity_commands_[1]);
         for(size_t i = 0; i < info_.joints.size(); i++)
         {
+           // RCLCPP_INFO(rclcpp::get_logger("MotorInterface"), "Exporting command interface for joint: %s", info_.joints[i].name.c_str());
+            RCLCPP_INFO(rclcpp::get_logger("MotorInterface"), "Exporting command interface for joint: %s", info_.joints[i].name.c_str()
+        );
             command_interfaces.emplace_back(hardware_interface::CommandInterface(info_.joints[i].name,
             hardware_interface::HW_IF_VELOCITY, &velocity_commands_[i]));
 
         }
         return command_interfaces;
-    }
+}
 
 
-    CallbackReturn MotorInterface::on_activate(const rclcpp_lifecycle::State &previous_state) 
-    {
+CallbackReturn MotorInterface::on_activate(const rclcpp_lifecycle::State &previous_state) 
+{
         (void)previous_state;
         RCLCPP_INFO(rclcpp::get_logger("MotorInterface"), "Starting robot hardware...");
+
         velocity_commands_ = {0.0, 0.0};
         position_states_ = {0.0, 0.0};
         velocity_commands_ = {0.0, 0.0};
+        
         try
         {
             arduino_.Open(port_);
@@ -140,15 +147,16 @@ CallbackReturn MotorInterface::on_init(const hardware_interface::HardwareInfo &h
         RCLCPP_INFO(rclcpp::get_logger("MotorInterface"), "hardware started, ready to take commands");
         return CallbackReturn::SUCCESS;
 
-    }
-    CallbackReturn MotorInterface::on_deactivate(const rclcpp_lifecycle::State &previous_state) 
-    {
+}
+CallbackReturn MotorInterface::on_deactivate(const rclcpp_lifecycle::State &previous_state) 
+{
         (void)previous_state;
 
         RCLCPP_INFO(rclcpp::get_logger("MotorInterface"), "Stopping robot hardware...");
         if(arduino_.IsOpen())
         {
-            try{
+            try
+            {
                 arduino_.Close();
             }
             catch(...)
@@ -159,10 +167,10 @@ CallbackReturn MotorInterface::on_init(const hardware_interface::HardwareInfo &h
         }
         return CallbackReturn::SUCCESS; 
 
-    }
+}
 
-    hardware_interface::return_type MotorInterface::read(const rclcpp::Time &time, const rclcpp::Duration &period)
-    {
+hardware_interface::return_type MotorInterface::read(const rclcpp::Time &time, const rclcpp::Duration &period)
+{
         /*
         Responsible for reading the current velocity 
         Format: rp2.57 = right positive 2.57 rad/s,  ln5.71 = left negative 5.71 rad/s -> velocity of the left and right 
@@ -198,60 +206,77 @@ CallbackReturn MotorInterface::on_init(const hardware_interface::HardwareInfo &h
         return hardware_interface::return_type::OK;
 
 
-    }
-    hardware_interface::return_type MotorInterface::write(const rclcpp::Time & time, const rclcpp::Duration & period)
-    {
+}
+hardware_interface::return_type MotorInterface::write(const rclcpp::Time & time, const rclcpp::Duration & period)
+{
         /*
         Allows us to send velocity commands to the Arduino, and so to the motors
         */
 
         (void)time;
         (void)period;
+
+        //RCLCPP_INFO(rclcpp::get_logger("MotorInterface"), "Received commands -> left: %.2f, right: %.2f", velocity_commands_.at(1),  velocity_commands_.at(0) );
+        
         std::stringstream message_stream;
         char right_wheel_sign = velocity_commands_.at(0) >= 0 ? 'p' : 'n';
         char left_wheel_sign = velocity_commands_.at(1) >= 0 ? 'p' : 'n';
 
-        std::string compensate_zero_right = "";
-        std::string compensate_zero_left = "";
+        // RCLCPP_DEBUG_STREAM(rclcpp::get_logger("MotorInterface"),
+        //             "Right velocity cmd: " << velocity_commands_.at(0)
+        //             << " | Left velocity cmd: " << velocity_commands_.at(1));
 
-        if(std::abs(velocity_commands_.at(0)) < 10.0)
-        {
-            compensate_zero_right = "0";
-        }
-        else
-        {
-            compensate_zero_right = "";
-        }
 
-        if(std::abs(velocity_commands_.at(1)) < 10.0)
-        {
-            compensate_zero_left = "0";
-        }
-        else
-        {
-            compensate_zero_left = "";
 
-        }
+        std::string compensate_zero_right = (std::abs(velocity_commands_.at(0)) < 10.0) ? "0" : "";
+        std::string compensate_zero_left  = (std::abs(velocity_commands_.at(1)) < 10.0) ? "0" : "";
+
+        // std::string compensate_zero_right = "";
+        // std::string compensate_zero_left = "";
+        // if(std::abs(velocity_commands_.at(0)) < 10.0)
+        // {
+        //     compensate_zero_right = "0";
+        // }
+        // else
+        // {
+        //     compensate_zero_right = "";
+        // }
+
+        // if(std::abs(velocity_commands_.at(1)) < 10.0)
+        // {
+        //     compensate_zero_left = "0";
+        // }
+        // else
+        // {
+        //     compensate_zero_left = "";
+
+        // }
+
+    
         message_stream << std::fixed << std::setprecision(2) << "r" << right_wheel_sign << compensate_zero_right << std::abs(velocity_commands_.at(0)) <<
                 ",l" << left_wheel_sign << compensate_zero_left << std::abs(velocity_commands_.at(1)) << ",";
         
+        std::string msg = message_stream.str();
+
+        // RCLCPP_INFO_STREAM(rclcpp::get_logger("MotorInterface"),
+        //                "Sending to Arduino: " << msg << " (port: " << port_ << ")");
+
+
+
+        
         try
         {
-            arduino_.Write(message_stream.str());
+            arduino_.Write(msg);
         }
         catch(...)
         {
-            RCLCPP_ERROR_STREAM(rclcpp::get_logger("Motor Interface"), "something went wrong while sending the message " << 
-            message_stream.str() << " on the port " << port_);
+            RCLCPP_ERROR_STREAM(rclcpp::get_logger("MotorInterface"),
+                                        "Error sending message: " << msg << " on port " << port_);
 
             return hardware_interface::return_type::ERROR;
-
         }
         return hardware_interface::return_type::OK;
-
-
-
-    }
+}
 }
 
 #include "pluginlib/class_list_macros.hpp"

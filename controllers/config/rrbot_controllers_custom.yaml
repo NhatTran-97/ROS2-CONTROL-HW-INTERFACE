@@ -1,0 +1,19 @@
+# Controller manager configuration
+controller_manager:
+  ros__parameters:
+    update_rate: 50  # Hz
+
+    # Define a name for controllers that we plan to use
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    rrbot_controller:
+      type: rrbot_controller/RRBotController
+
+# Properties of the custom controler and definition of joints to use
+rrbot_controller:
+  ros__parameters:
+    joints:
+      - joint1
+      - joint2
+    interface_name: position

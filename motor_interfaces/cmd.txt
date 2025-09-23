@@ -2,3 +2,5 @@ ros2 run motor_interfaces simple_serial_transmitter --ros-args -p port:=/dev/tty
  ros2 topic pub /serial_transmitter std_msgs/msg/String  "data: '0'" 
 
  ros2 run motor_interfaces simple_serial_receiver --ros-args -p port:=/dev/ttyUSB0
+
+ ros2 topic pub /diff_drive_controller/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.2}, angular: {z: 0.0}}"
